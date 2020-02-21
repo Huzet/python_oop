@@ -5,37 +5,28 @@ class User:
         self.account_balance = 0 
 
     def make_deposit(self, amount):
-        self.account_balance += amount	
+        self.account_balance += amount
+        return self	
     
     def make_withdrawal(self, amount):
         self.account_balance -= amount
+        return self
 
     def transfer_money(self, other, amount):
         self.account_balance -= amount
         other.make_deposit(amount)
+        return self
 
-    
-        
-    		
+    def display_account_balance(self):
+        print(self.name , self.account_balance)
+        return self
+
 tomas = User('Tomas', 'email')
 kana = User('Kana', 'email1')
 graham = User('Gram', 'email2')
-tomas.make_deposit(1000000)
-tomas.make_deposit(1000000)
-tomas.make_deposit(1000000)
-tomas.make_withdrawal(1)
 
-kana.make_deposit(1000000)
-kana.make_deposit(1000000)
-kana.make_withdrawal(1)
-kana.make_withdrawal(1)
+tomas.make_deposit(1000000).make_deposit(1000000).make_deposit(1000000).make_withdrawal(1).display_account_balance()
 
-graham.make_deposit(1000000)
-graham.make_deposit(1000000)
-graham.make_withdrawal(1)
-graham.make_withdrawal(1)
+kana.make_deposit(1000000).make_deposit(1000000).make_withdrawal(1).make_withdrawal(1).display_account_balance()
 
-tomas.transfer_money(graham, 1)
-
-print(tomas.account_balance)
-print(graham.account_balance)
+graham.make_deposit(1000000).make_deposit(1000000).make_withdrawal(1).make_withdrawal(1).display_account_balance()
