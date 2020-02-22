@@ -47,7 +47,7 @@ kana_bankaccount = bank_account('bankie', 1000000, 0.01)
 
 kana_bankaccount.deposit(1).deposit(1).deposit(1).withdraw(1).display_account_info()
 
-kana_bankaccount.deposit(1).deposit(1).deposit(1).withdraw(1).display_account_info()
+# kana_bankaccount.deposit(1).deposit(1).deposit(1).withdraw(1).display_account_info()
 
 tomas_bankaccount.deposit(1).deposit(1).withdraw(1).withdraw(1).withdraw(1).withdraw(1).yield_interest().display_account_info()
 
